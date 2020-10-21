@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body class="form-v4">
+
+	<div class="page-content">
+
+		<div class="form-v4-content">
+
+			<!-- <div class="form-left">
+
+			</div> -->
+			<form class="form-detail"  method="POST" id="myform">
+				<h2>REGISTRATION FORM</h2>
+				<div class="form-row">
+				{% csrf_token %}
+				{{form.as_p}}
+				</div>
+
+				<div class="form-row-last">
+					<input type="submit" class="register" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		// just for the demos, avoids form submit
+
+		  		
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
