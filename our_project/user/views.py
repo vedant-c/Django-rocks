@@ -1,17 +1,12 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.views.generic import CreateView, TemplateView
-from django.contrib.auth.models import User
-
+from django.shortcuts import render
+from django.views.generic import TemplateView,CreateView,FormView
 from .forms import UserForm
-
 # Create your views here.
 
-class UserRegistration(CreateView):
-    form_class = UserForm
-    queryset = User.objects.all()
-    template_name = 'index.html'
-
-
-class HomeView(TemplateView):
+class IndexView(TemplateView):
     template_name = 'home.html'
+
+class UserRegistrationView(CreateView):
+    form_class = UserForm
+    template_name = 'register.html'
+    redirect_url = 'home'
