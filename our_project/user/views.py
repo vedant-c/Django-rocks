@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,CreateView,FormView
-from .forms import MemberForm
+from .forms import UserForm
 # Create your views here.
 
-class Index(TemplateView):
-    template_name='index.html'
+class IndexView(TemplateView):
+    template_name = 'home.html'
 
-class Register(CreateView):
-    form_class=MemberForm
-    template_name='register.html'
-    success_url='index'
+class UserRegistrationView(CreateView):
+    form_class = UserForm
+    template_name = 'register.html'
+    redirect_url = 'home'
